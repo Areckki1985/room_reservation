@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Room</title>
+</head>
+<body>
+
+    {% block content %}
+<form action="/add_room/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    {{ form2.as_p }}
+    {{ message }}
+    <input type="submit" value="Add Room">
+</form>
+    {% endblock %}
+
+
+</body>
+</html>
